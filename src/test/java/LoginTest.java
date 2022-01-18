@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -10,16 +9,16 @@ public class LoginTest extends BaseTest{
     @Test
     public void login(){
         open("/login");
-        $("#inputEmail").sendKeys("dmitrykhilko@mail.ru");
-        $(By.xpath("//*[@id='inputPassword']")).setValue("Kg2r*VF*Vn_5BR8").submit(); // submit - это отправка данных формы (чтобы не нажимать на кнопку)
+        $("#inputEmail").sendKeys(email);
+        $(By.xpath("//*[@id='inputPassword']")).setValue(password).submit(); // submit - это отправка данных формы (чтобы не нажимать на кнопку)
         $(By.id("createButton")).shouldBe(visible);
     }
 
     @Test
     public void login1(){
         open("/login");
-        $("#inputEmail").sendKeys("dmitrykhilko@mail.ru");
-        $(By.xpath("//*[@id='inputPassword']")).setValue("Kg2r*VF*Vn_5BR8").submit(); // submit - это отправка данных формы (чтобы не нажимать на кнопку)
+        $("#inputEmail").sendKeys(email);
+        $(By.xpath("//*[@id='inputPassword']")).setValue(password).submit(); // submit - это отправка данных формы (чтобы не нажимать на кнопку)
         $(By.id("createButton")).shouldBe(visible);
     }
 }
